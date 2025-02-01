@@ -1,0 +1,27 @@
+shoham.at, avikupinsky
+Shoham Atia (201277605), Avi Kupinsky (318336070)
+EX: 5
+
+FILES:
+sockets.cpp - the source file for the sockets executable. Based on command line arguments will run either a client or
+    server at a port given at the command line argument.
+container.cpp - the source file for the container executable. Constructs a container and runs a program within the
+    container.
+Makefile - makefile to create the two executables - sockets and container and to create a tar for the exercise.
+README - this file.
+------------------------------------------------------------------------------------------------------------------------
+QUESTIONS:
+1. One use of Linux pid namespaces could be to preform an operation on multiple processes under the same container, for
+example, one can suspend all the processes of a cs user when he / she turns off a computer in the computer farm and
+migrate them to another computer in the computer farm with the same IDs and resume their run.
+2. We can use Linux mount namespaces in order to help isolate by making it appear to the processes under a namespace
+that as if their root directory is a different one then the actual root directory.
+3. One possible use of Linux cgroups is to limit and monitor various resources for processes in a namespace, for
+example, one can limit the number of processes that can be crated in the namespace.
+4. The clone command is used to crate a child process of the calling process that is, a new duplicated process. the
+difference between this command and the fork command is that the clone command allows more control over what the new
+process and the current one will share compared to the fork command. for example using the clone command we could assign
+the new process a different namespace, files and signal handlers.
+5. the chroot command changes the root directory of the calling process.
+6. procfs is a virtual file system that is used inorder to keep track of the running processes and is used to
+communicate between the kernel space and the user space.

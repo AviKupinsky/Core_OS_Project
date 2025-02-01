@@ -1,0 +1,53 @@
+shoham.at, avikupinsky
+Shoham Atia (201277605), Avi Kupinsky (318336070)
+EX: 2
+
+FILES:
+README -- This file.
+uthreads.cpp -- file that include the thread library functions and the implementation of our library.
+makefile -- a makefile for the program.
+
+------------------------------------------------------------------------------------------------------------------------
+REMARKS:
+* We decided to erase all allocated threads before exit, it wasn't clear to us if it was needed.
+
+------------------------------------------------------------------------------------------------------------------------
+ANSWERS:
+
+Assignment 1:
+    An example for a possible use of user level threads is a program that allows multiple users to preform the same
+    computational task (such as computing the amount to pay at checkout in an online store) at the same time. By using
+    threads we can make it seem like the same task is executed at the same time and with different context for etch user
+    (not the same variables for all the users that run the task). We will prefer user level threads over kernel level
+    threads for this scenario because we don't use any kernel services for this task and kernel level thread is not
+    necessary and because kernel level thread has more overhead compered to user level thread.
+Assignment 2:
+    Advantages:
+        - If one tab crashes the other tabs stay in tacked.
+        - Multi-tasking - threads share memory so when switching tabs we will demanded replacing all the memory about
+        the current tab to the other tab (such as the page contents, our position in the page and so on), using
+        different processes allows us to save all the information about the tab and switch between processes instead of
+        loading the information from the disk.
+    Disadvantages:
+        - The overhead of switching between processes is bigger then the overhead of switching threads.
+        - When using different processes it's harder to pass information between them compered to using threads.
+Assignment 3:
+    Opening Shotwell:
+        - Keyboard interrupt for etch character we typed with the OS handled by passing it to the Shell program.
+        - Shell creattes a trap interrupt using the kill function.
+    Running "ps -A" command:
+        - Keyboard interrupt for etch character we typed with the OS handled by passing it to the Shell program.
+    Running "kill" with the processes id of Shotwell command:
+        - Keyboard interrupt for etch character we typed with the OS handled by passing it to the Shell program.
+        - Shell sends a trap interrupt using the kill function.
+        - OS sends SIGTERM signal to Shotwell.
+Assignment 4:
+    'Real' time is the time as defined as humans while 'virtual' time is the CPU time required to preform a task without
+    interrupts. for example we use 'Real' time in order to plan our day and schedule events and programs use 'virtual'
+    time to measure computational progress. for example this exercise, we used the virtual timer in order to measure
+    the total number of quantum that our library ran since its initialization.
+Assignment 5:
+    sigsetjmp - is used in order to save the current environment of the CPU (Registers) and the signals that we blocked.
+    siglongjmp - is used in order to jump to an environment of the CPU (Registers) and blocks the signals, both where
+    saved earlier by the function sigsetjmp.
+

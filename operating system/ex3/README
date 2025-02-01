@@ -1,0 +1,17 @@
+shoham.at, avikupinsky
+Shoham Atia (201277605), Avi Kupinsky (318336070)
+EX: 3
+
+FILES:
+README -- This file.
+MapReduceFramework.cpp -- MapReduce framework functions.
+makefile -- a makefile for the program.
+Barrier.cpp - Barrier class that wrap the pthread barrier
+Barrier.h - header file for the Barrier class
+
+------------------------------------------------------------------------------------------------------------------------
+REMARKS:
+
+
+
+

@@ -1,0 +1,39 @@
+shoham.at, avikupinsky
+Shoham Atia (201277605), Avi Kupinsky (318336070)
+EX: 1
+
+FILES:
+README -- This file.
+osm.cpp -- The source file for the implementation of the library that measures the execution time of a single operation,
+    a call to an empty function and a syscall.
+Makefile -- Generates the libosm.a library.
+timing_graph.png - A graph of the duration of the different actions on different platforms.
+
+------------------------------------------------------------------------------------------------------------------------
+REMARKS:
+- The code presented in osm.cpp contains code repeatitions / duplication / copy-paste.
+- An option that is possible but we decided against to keep simplicity is using precompiler #define for large pieces of
+    code.
+- During assignment 2 we recorded the measurements of the time it took to preform each operation by implementing a
+    "main" function that runs each operation (addition, empty function call, empty syscall) {n} times and prints the
+    measured to a document, where {n} is given by the user of the function "main" in the command line.
+- We measured the time that it takes to preform each of the operations by running the operation {n} times using loop
+    unrolling and dividing the total time taken by {n} when n=(100000, 150000, 1000000). After that, we calculated the
+    mean of the time it took to each operation.
+
+------------------------------------------------------------------------------------------------------------------------
+ANSWERS:
+
+Assignment 1:
+The program "WhatIDo" dose the following:
+If the program receives an argument it creates the folder (directory) named "Welcome" in te current directory and the
+folder (directory) named "To" in the '../Welcome/' directory and then creates a file named "OS2021" (or overwrites an
+existing file with the same name) in the directory '../Welcome/To/'. then, it writes to the file the following lines:
+    "*user_name* /* user name of the user running the program */
+    If you haven't read the course guidelines yet --- do it right now!
+    *the argument that was given to the program*"
+then the program deletes the file that was created and deletes the directories that were created.
+
+If the program doesn't receive an argument it duplicates the STDERR file and then writes an error massage to the
+duplicated file (which is the same file for this purpose) saying:
+    "Error. The program should receive a single argument. Exiting.\n".
